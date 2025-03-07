@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sederhana</title>
+    <link rel="icon" type="image/png" href="gambar/icon.png" sizes="16x16"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <h2>Form Uji Coba</h2>
+
+    <!-- Form dengan target _self -->
+    <form action="/action_page.php" method="get" target="_self">
+        <fieldset>
+            <legend>Formulir Dengan "Target: _self"</legend>
+            <label for="depan">Nama Depan:</label><br>
+            <input type="text" id="depan" name="i_name" required><br>
+            <label for="n_belakang">Nama Belakang:</label><br>
+            <input type="text" id="n_belakang" name="i_belakang" required><br><br>
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <!-- Form dengan target _blank -->
+    <form action="/action_page.php" method="post" target="_blank">
+        <fieldset>
+            <legend>Formulir Dengan "Target: _blank"</legend>
+            <label for="depan2">Nama Depan:</label><br>
+            <input type="text" id="depan2" name="i_name" required><br>
+            <label for="n_belakang2">Nama Belakang:</label><br>
+            <input type="text" id="n_belakang2" name="i_belakang" required><br><br>
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <!-- Form dengan target _parent -->
+    <form action="/action_page.php" method="get" target="_parent">
+        <fieldset>
+            <legend>Formulir Dengan "Target: _parent"</legend>
+            <label for="depan3">Nama Depan:</label><br>
+            <input type="text" id="depan3" name="i_name" required><br>
+            <label for="n_belakang3">Nama Belakang:</label><br>
+            <input type="text" id="n_belakang3" name="i_belakang" required><br><br>
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+    <p>Jika Anda mengklik tombol "Kirim", data formulir akan dikirim ke halaman bernama "/action_page.php"</p>
+
+    <!-- Kesimpulan -->
+    <h3>Kesimpulan</h3>
+    <p>
+            Setelah melakukan uji coba, didapatkan bahwa penggunaan atribut <code>target="_self"</code> 
+            akan membuka halaman formulir di tab yang sama.  
+            Jika menggunakan <code>target="_blank"</code>, halaman akan terbuka di tab baru.  
+            Sedangkan <code>target="_parent"</code> berfungsi jika formulir berada dalam iframe, 
+            dan akan membuka hasil di luar iframe.  
+            Untuk metode pengiriman, <code>method="get"</code> akan menampilkan data yang dikirim di URL, 
+            sedangkan <code>method="post"</code> mengirim data secara tersembunyi, lebih aman untuk informasi sensitif.  
+    </p>
+
+</body>
+</html>

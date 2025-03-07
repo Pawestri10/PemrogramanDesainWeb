@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran</title>
+    <link rel="icon" type="img/png" href="gambar/icon.png" sizes="16x16"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <!-- Isi header disini -->
+    </div>
+
+    <div id="main">
+        <div id="link">
+            <!-- Isi link disini -->
+        </div>
+
+        <div id="content">
+            <!-- Isi content disini -->
+            <form action="proses.php" method="POST">
+                <h2>Form Pendaftaran Mahasiswa Baru</h2>
+        
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" required>
+        
+                <label>Tempat/Tanggal Lahir:</label>
+                <div class="form-group">
+                    <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" required>
+                    <select name="tanggal" required>
+                        <option value="">DD</option>
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                    <select name="bulan" required>
+                        <option value="">MM</option>
+                        <script>
+                            for (let i = 1; i <= 12; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                    <select name="tahun" required>
+                        <option value="">YYYY</option>
+                        <script>
+                            for (let i = 1989; i <= 1994; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+        
+                <label for="agama">Agama:</label>
+                <select id="agama" name="agama" required>
+                    <option value="">-PILIH-</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Budha">Budha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+        
+                <label>Jenis Kelamin:</label>
+                <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+
+                <br>
+        
+                <label for="ijazah">No. Ijazah SMA/MA:</label>
+                <input type="text" id="ijazah" name="ijazah" required>
+        
+                <label for="foto">Foto (Ukuran Maks. 20 KB):</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+        
+                <label for="nama_ayah">Nama Ayah:</label>
+                <input type="text" id="nama_ayah" name="nama_ayah" required>
+        
+                <label for="nama_ibu">Nama Ibu:</label>
+                <input type="text" id="nama_ibu" name="nama_ibu" required>
+        
+                <label for="alamat_rumah">Alamat Rumah:</label>
+                <textarea id="alamat_rumah" name="alamat_rumah" rows="3" required></textarea>
+        
+                <label for="no_telp">No. Telp:</label>
+                <input type="text" id="no_telp" name="no_telp" required>
+        
+                <label for="sekolah_asal">Nama Sekolah Asal:</label>
+                <input type="text" id="sekolah_asal" name="sekolah_asal" required>
+        
+                <label for="alamat_sekolah">Alamat Sekolah Asal:</label>
+                <textarea id="alamat_sekolah" name="alamat_sekolah" rows="3" required></textarea>
+        
+                <label for="jurusan">Jurusan Dipilih:</label>
+                <select id="jurusan" name="jurusan" required>
+                    <option value="">-PILIH-</option>
+                    <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+                    <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+                    <option value="Teknik Komputer Kontrol">Teknik Komputer Kontrol</option>
+                    <option value="Teknik Listrik">Teknik Listrik</option>
+                    <option value="Mesin Otomotif">Mesin Otomotif</option>
+                    <option value="Perkeretaapian">Perkeretaapian</option>
+                    <option value="Teknologi Informasi">Teknologi Informasi</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                </select>
+        
+                <label>Tahu informasi ini dari:</label>
+                <input type="checkbox" name="info[]" value="Koran"> Koran
+                <input type="checkbox" name="info[]" value="Website"> Website
+                <input type="checkbox" name="info[]" value="Televisi"> Televisi
+                <input type="checkbox" name="info[]" value="Radio"> Radio
+                <input type="checkbox" name="info[]" value="Teman"> Teman
+
+                <div class="btn-container">
+                    <input type="submit" value="DAFTAR">
+                    <input type="reset" value="BATAL">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <!-- Isi footer disini -->
+    </div>
+</body>
+</html>
