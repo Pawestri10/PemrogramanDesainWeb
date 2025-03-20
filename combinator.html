@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Combinator Selectors</title>
+
+        <style>
+            div p {
+                color: red;
+            }
+            div > p {
+                background-color: yellow;
+            }
+            div + p {
+                background-color: darkgray;
+            }
+            div ~ p {
+                color: cyan;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <header>
+            <h1>Combinator Selektor</h1>
+        </header>
+
+       <div>
+            <p style="color: red;">Semua paragraf di dalam div akan berwarna merah, 
+                                     baik itu anak langsung maupun tidak langsung.</p>
+            <p style="background-color: yellow;">Paragraf yang merupakan anak langsung dari div
+                                      akan memiliki latar belakang kuning.</p>
+       </div>
+            <p style="background-color: darkgray;">Paragraf yang langsung muncul setelah div
+                                                     akan memiliki latar belakang abu-abu gelap.</p>
+            <p style="color: cyan;">Semua paragraf yang berada setelah dalam satu level struktur HTML akan memiliki teks berwarna cyan.</p>
+    </body>
+</html>
