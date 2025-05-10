@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<body>
+    <h2>JavaScript Confirm Box</h2>
+    <button onclick="myFunction()">Klik ini</button>
+    <p id="demo"></p>
+<script>
+    function myFunction(){
+        var txt;
+        if (confirm("Apakah anda akan logout?")) {
+            txt = "Anda mengklik OK";
+        } else {
+            txt = "Anda mengklik cancel";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+</script>
+</body>
+</html>

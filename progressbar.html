@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dialog Download dengan Progressbar</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+    }
+
+    #downloadButton {
+      padding: 10px 20px;
+      background-color: #083c6c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #progressbar {
+      margin-top: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="downloadButton">Mulai Download</button>
+
+<div id="downloadDialog" title="Mengunduh File..." style="display:none;">
+  <div id="progressbar"></div>
+  <p id="status">Memulai...</p>
+</div>
+
+<script>
+  $(document).ready(function() {
+  
+    $("#downloadDialog").dialog({
+      autoOpen: false,
+      modal: true,
+      width: 400
+    });
+
+    $("#downloadButton").click(function() {
+      $("#downloadDialog").dialog("open");
+      $("#progressbar").progressbar({ value: 0 });
+      $("#status").text("Sedang mengunduh...");
+
+      let progress = 0;
+      const interval = setInterval(function() {
+        progress += 5;
+        $("#progressbar").progressbar("value", progress);
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          $("#status").text("Unduhan selesai!");
+        }
+      }, 200); 
+    });
+  });
+</script>
+
+</body>
+</html>

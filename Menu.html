@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #menuToggle {
+      background-color: #083c6c;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #menu {
+      display: none;
+      list-style: none;
+      padding: 0;
+    }
+
+    #menu li {
+      background-color: #f1f1f1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: -1px;
+    }
+
+    #menu li:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Menu Navigasi</h2>
+<button id="menuToggle">Tampilkan Menu</button>
+
+<ul id="menu">
+  <li>Beranda</li>
+  <li>Profil</li>
+  <li>Kontak</li>
+  <li>Keluar</li>
+</ul>
+
+<script>
+  $(document).ready(function() {
+    $("#menuToggle").click(function() {
+      $("#menu").slideToggle(); // Efek muncul/sembunyi dengan animasi
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Dialog jQuery</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+    }
+    #bukaDialog {
+      padding: 10px 20px;
+      background-color: #083c6c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="bukaDialog">Tampilkan Dialog</button>
+
+<div id="dialog" title="Pesan Penting" style="display:none;">
+  <p>Ini adalah jendela dialog basic menggunakan jQuery UI.</p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#bukaDialog").click(function() {
+      $("#dialog").dialog();
+    });
+  });
+</script>
+
+</body>
+</html>
